@@ -92,7 +92,7 @@ export default function FilterForm() {
               value={filters.name}
               onChange={(e) => handleChange("name", e.target.value)}
               placeholder="Doctor name"
-              className="w-full h-10"
+              className="w-full h-10 placeholder:text-sm md:text-base "
             />
           </div>
 

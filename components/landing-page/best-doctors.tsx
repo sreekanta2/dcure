@@ -13,7 +13,6 @@ import "swiper/css";
 import { Navigation } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Swiper as SwiperType } from "swiper/types";
-import { AnimatedButton } from "../animated-button";
 import { User } from "../svg";
 import { Button } from "../ui/button";
 
@@ -137,9 +136,9 @@ const BestDoctors = () => {
       className="py-16 lg:py-20 "
       aria-labelledby="best-doctors-heading"
     >
-      <div className="container mx-auto px-4">
+      <div className="container space-y-6  ">
         {/* Header with proper heading hierarchy */}
-        <header className="text-center mb-8">
+        <header className="text-center  ">
           <motion.h2
             id="best-doctors-heading"
             initial={{ opacity: 0 }}
@@ -160,7 +159,7 @@ const BestDoctors = () => {
         </header>
 
         {/* Carousel Navigation */}
-        <div className="flex justify-end gap-3 mb-6">
+        <div className="flex justify-end gap-3  ">
           <button
             onClick={() => swiperInstance?.slidePrev()}
             className="w-10 h-10 rounded-full bg-white dark:bg-gray-800 shadow-md flex items-center justify-center text-gray-700 dark:text-gray-300 hover:bg-blue-100 dark:hover:bg-blue-900/50 transition-colors"
@@ -247,10 +246,10 @@ const BestDoctors = () => {
                       <Button
                         variant="ghost"
                         size="icon"
-                        className="rounded-full"
+                        className="rounded-full hover:text-white"
                         aria-label={`Bookmark ${doctor.name}`}
                       >
-                        <Bookmark className="w-5 h-5" />
+                        <Bookmark className="w-5 h-5 " />
                       </Button>
                     </div>
                     <p
@@ -333,15 +332,14 @@ const BestDoctors = () => {
         </Swiper>
 
         {/* View All CTA with semantic link */}
-        <div className="text-center  ">
-          <AnimatedButton
-            as="link"
+        <div className="text-center   ">
+          <Link
             href="/doctors"
-            text="View All Doctors"
-            icon="heroicons:arrow-right"
-            delay={0.4}
-            aria-label="Browse all our doctors"
-          />
+            className="inline-flex items-center gap-2 text-primary font-semibold hover:underline"
+            aria-label="View all doctors"
+          >
+            View All Doctors
+          </Link>
         </div>
       </div>
     </motion.section>

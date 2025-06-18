@@ -49,7 +49,7 @@ const PatientDashboardPage = async ({
   // Fetch doctors data based on page and limit
   const doctors = await getDoctors({ page, limit });
   return (
-    <div className="space-y-6 bg-card p-6 rounded-md">
+    <div className="space-y-14    rounded-md">
       {/* <!-- Stats Overview Section --> */}
       <section>
         <h2 className="sr-only">Statistics Overview</h2>
@@ -118,7 +118,7 @@ const PatientDashboardPage = async ({
                 doctors?.data?.map((doctor: any) => (
                   <Card
                     key={doctor.id}
-                    className="bg-card shadow-lg rounded-lg p-2 text-left border"
+                    className="bg-card shadow-lg rounded-lg p-4 text-left border"
                   >
                     <CardHeader className="p-0 border-b-0">
                       <figure className="w-full relative overflow-hidden border rounded-md">
@@ -204,10 +204,10 @@ const PatientDashboardPage = async ({
 
       {/* <!-- Favorite Doctors Section --> */}
       <section
-        className="py-4 bg-background rounded-lg shadow-sm border "
+        className="py-4 bg-card rounded-lg shadow-sm border "
         aria-labelledby="favorite-doctors-heading"
       >
-        <header className="p-6 pb-0">
+        <header className="p-4 pb-0">
           <div className="flex flex-col md:flex-row items-center flex-wrap justify-between gap-4">
             <h2
               id="favorite-doctors-heading"
@@ -228,7 +228,7 @@ const PatientDashboardPage = async ({
 
         <hr className="my-4 border-default-200" />
 
-        <div className="p-6 space-y-6">
+        <div className="p-4 space-y-6">
           <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
             {doctors?.data?.length > 0 ? (
               doctors.data.map((doctor: any) => (

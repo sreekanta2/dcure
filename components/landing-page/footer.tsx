@@ -114,7 +114,7 @@ const Footer = () => {
         </div>
 
         {/* Copyright */}
-        <div className="relative bg-primary-900 dark:bg-default-50 py-6 px-4">
+        <div className="relative bg-primary-900 dark:bg-default-50 py-6  ">
           <div className="container flex flex-col text-center md:text-start md:flex-row gap-2">
             <p className="text-default-500 flex-1 text-base font-medium">
               COPYRIGHT &copy; Doccure All rights Reserved

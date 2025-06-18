@@ -2,7 +2,6 @@
 import { useMediaQuery } from "@/hooks/use-media-query";
 import { useSidebar } from "@/store";
 import FullScreen from "./full-screen";
- 
 
 import ClassicHeader from "./layout/classic-header";
 import MobileMenuHandler from "./mobile-menu-handler";
@@ -15,7 +14,7 @@ const NavTools = ({ isDesktop }: { isDesktop: boolean }) => (
   <div className="nav-tools flex items-center gap-2">
     {isDesktop && <FullScreen />}
     <ThemeButton />
-    
+
     <NotificationMessage />
     <div className="pr-2">
       <ProfileInfo />
@@ -24,7 +23,7 @@ const NavTools = ({ isDesktop }: { isDesktop: boolean }) => (
   </div>
 );
 
-const Header = ({ handleOpenSearch }: { handleOpenSearch: () => void }) => {
+const Header = () => {
   const { collapsed } = useSidebar();
   const isDesktop = useMediaQuery("(min-width: 1280px)");
 

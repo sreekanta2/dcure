@@ -92,7 +92,7 @@ export default async function DoctorsPage({
       />
 
       <section className="bg-background">
-        <div className="container mx-auto relative px-6 py-8">
+        <div className="container   relative   py-8">
           <FilterForm />
 
           <article className="w-full">
@@ -261,8 +261,8 @@ export default async function DoctorsPage({
                       </div>
 
                       <div itemProp="yearsOfExperience">
-                        <span className="text-primary">●</span>
-                        <span>{21}+ Years of Experience</span>
+                        <span className="text-primary">● </span>
+                        <span> {21}+ Years of Experience</span>
                       </div>
 
                       {doctor.languages && (
@@ -279,7 +279,7 @@ export default async function DoctorsPage({
                     <Button
                       variant="outline"
                       size="sm"
-                      className="text-primary border-primary hover:bg-primary/10"
+                      className="  dark:hover:text-white"
                       aria-label="Save doctor to favorites"
                     >
                       <Bookmark className="w-4 h-4 mr-2" />

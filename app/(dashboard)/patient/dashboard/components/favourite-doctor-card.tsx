@@ -13,7 +13,7 @@ import Link from "next/link";
 
 export default function FavouritesDoctorCard({ doctor }: { doctor: any }) {
   return (
-    <Card className="bg-card shadow-lg rounded-lg p-2 text-left border">
+    <Card className="bg-card shadow-lg rounded-lg p-4 text-left border">
       <CardHeader className="p-0 border-b-0">
         <div className="w-full   relative overflow-hidden border rounded-md">
           <CustomImage

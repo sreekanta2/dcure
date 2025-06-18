@@ -7,7 +7,7 @@ import Image from "next/image";
 export default function Summary() {
   return (
     <div className=" dark:bg-[#0e1527]  py-16 lg:py-20  dark:shadow-sm ">
-      <div className="text-center mb-12  ">
+      <div className=" container text-center mb-12  ">
         <motion.h2
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
@@ -27,7 +27,7 @@ export default function Summary() {
         </motion.p>
       </div>
 
-      <div className="container grid lg:grid-cols-2 gap-8   px-6 lg:px-8">
+      <div className="container grid lg:grid-cols-2 gap-8   ">
         {/* Image Section */}
         <motion.div
           className="hidden  md:flex items-end justify-center"

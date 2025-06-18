@@ -4,7 +4,7 @@ import { useSidebar } from "@/store";
 
 import MobileFooter from "./mobile-footer";
 
-const Footer = ({ handleOpenSearch }: { handleOpenSearch: () => void }) => {
+const Footer = () => {
   const { collapsed } = useSidebar();
   const mounted = useMounted();
   const isMobile = useMediaQuery("(min-width: 768px)");
@@ -13,7 +13,7 @@ const Footer = ({ handleOpenSearch }: { handleOpenSearch: () => void }) => {
     return null;
   }
   if (!isMobile) {
-    return <MobileFooter handleOpenSearch={handleOpenSearch} />;
+    return <MobileFooter />;
   }
 
   return (

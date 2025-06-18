@@ -32,7 +32,7 @@ const DashBoardLayoutProvider = ({
 
   return (
     <div>
-      <Header handleOpenSearch={() => setOpen(true)} />
+      <Header />
       <Sidebar />
 
       <div className={` ${!collapsed ? "collapsed  " : "not-collapsed "}`}>
@@ -47,7 +47,7 @@ const DashBoardLayoutProvider = ({
           </LayoutWrapper>
         </div>
       </div>
-      <Footer handleOpenSearch={() => setOpen(true)} />
+      <Footer />
     </div>
   );
 };

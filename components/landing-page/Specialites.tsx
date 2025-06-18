@@ -49,7 +49,7 @@ const specialtiesWithCount = [
 const SpecialtiesCarousel = () => {
   return (
     <motion.section className="bg-background  dark:bg-[#0e1527] pt-16 lg:py-20">
-      <div className="container mx-auto px-4">
+      <div className="container    ">
         {/* Header */}
         <div className="text-center mb-12">
           <motion.h2
@@ -72,7 +72,7 @@ const SpecialtiesCarousel = () => {
         </div>
 
         {/* Carousel */}
-        <div className="relative px-4 md:px-0">
+        <div className="relative  ">
           <Swiper
             slidesPerView={1}
             spaceBetween={20}

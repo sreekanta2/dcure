@@ -11,7 +11,7 @@ const selectVariants = cva(
     variants: {
       color: {
         default:
-          "border-muted-background text-default-300 focus:outline-none focus:border-muted-background disabled:bg-default-300 disabled:placeholder:text-default-300 placeholder:text-default-700 [&>svg]:stroke-primary",
+          "border-muted-background text-default-700 focus:outline-none focus:border-muted-background disabled:bg-default-300 disabled:placeholder:text-default-700 placeholder:text-default-700 [&>svg]:stroke-primary",
         primary:
           "border-primary text-primary focus:outline-none focus:border-primary disabled:bg-primary/30 disabled:placeholder:text-primary placeholder:text-primary/70 [&>svg]:stroke-primary",
         info: "border-info/50 text-info focus:outline-none focus:border-info-700 disabled:bg-info/30 disabled:placeholder:text-info placeholder:text-info/70",

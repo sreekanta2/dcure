@@ -165,11 +165,11 @@ export const AnimatedButton = ({
       whileInView="visible"
       viewport={{ once: true, margin: "-20px" }}
       variants={containerVariants}
-      className={`flex justify-center mt-8 ${fullWidth ? "w-full" : ""}`}
+      className={`w-full flex justify-center mt-8  `}
     >
       {as === "link" ? (
         <Link href={href || ""} passHref legacyBehavior>
-          <div>
+          <div className="inline-flex items-center gap-2">
             {iconPosition === "left" && icon && (
               <motion.span variants={iconVariants}>
                 <Icon icon={icon} className={iconClassName} />

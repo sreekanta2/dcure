@@ -182,14 +182,14 @@ export function HomeBanner() {
           {/* Search Form */}
           <motion.div
             variants={fadeIn("right", "spring", 0.8, 0.75)}
-            className="bg-primary/10 dark:bg-card rounded-md md:rounded-full p-4"
+            className="   rounded-md md:rounded-full  "
           >
             <div className="flex flex-col md:flex-row gap-2">
               <motion.div variants={zoomIn(0.1, 0.5)} className="flex-1">
                 <Input
                   type="text"
-                  placeholder="Search doctors, specialties..."
-                  className="h-12 border-0 bg-primary/10 text-base"
+                  placeholder="Search doctors"
+                  className="md:h-12 border-0 bg-primary/10 placeholder:text-sm md:placeholder:text-base text-sm md:text-base"
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
                   variant="flat"
@@ -200,19 +200,21 @@ export function HomeBanner() {
               <motion.div variants={zoomIn(0.2, 0.5)} className="flex-1">
                 <Select onValueChange={setSpecialty} value={specialty}>
                   <SelectTrigger
-                    className="h-11 border-0 bg-primary/10"
+                    className="md:h-12 border-0 bg-primary/10 text-sm md:text-base"
                     variant="flat"
                     color="primary"
                     size="lg"
                   >
                     <SelectValue placeholder="Specialty" />
                   </SelectTrigger>
-                  <SelectContent className="text-base">
-                    <SelectItem value="" className="text-base">
-                      All Specialties
-                    </SelectItem>
+                  <SelectContent className=" text-sm md:text-base">
+                    <SelectItem value="">All Specialties</SelectItem>
                     {specialties.map((spec) => (
-                      <SelectItem key={spec} value={spec}>
+                      <SelectItem
+                        key={spec}
+                        value={spec}
+                        className=" text-sm md:text-base"
+                      >
                         {spec}
                       </SelectItem>
                     ))}
@@ -223,7 +225,7 @@ export function HomeBanner() {
               <motion.div variants={zoomIn(0.3, 0.5)} className="flex-1">
                 <Select onValueChange={setLocation} value={location}>
                   <SelectTrigger
-                    className="h-12 border-0 bg-primary/10 text-primary"
+                    className="md:h-12 border-0 bg-primary/10 text-primary"
                     variant="flat"
                     color="primary"
                     size="lg"
@@ -233,7 +235,7 @@ export function HomeBanner() {
                       className="text-primary"
                     />
                   </SelectTrigger>
-                  <SelectContent className="text-base">
+                  <SelectContent className=" text-sm md:text-base">
                     <SelectItem value="">All Locations</SelectItem>
                     {locations.map((loc) => (
                       <SelectItem key={loc} value={loc}>
@@ -246,12 +248,12 @@ export function HomeBanner() {
 
               <motion.div
                 variants={zoomIn(0.2, 0.3)}
-                whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.98 }}
+                className="w-full md:w-fit"
               >
                 <Button
                   onClick={handleSearch}
-                  className="h-12 px-8 text-lg hover:text-blue-700"
+                  className="w-full md:h-12 px-8 text-sm md:text-base hover:text-white"
                   variant="outline"
                 >
                   <Icon
