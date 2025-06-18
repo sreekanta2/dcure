@@ -6,7 +6,6 @@ import Link from "next/link";
 import "swiper/css";
 import { Autoplay, Navigation } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { AnimatedButton } from "../animated-button";
 
 const specialtiesWithCount = [
   { name: "Anesthesia", count: Math.floor(Math.random() * 20) + 1 },
@@ -49,7 +48,7 @@ const specialtiesWithCount = [
 
 const SpecialtiesCarousel = () => {
   return (
-    <motion.section className="bg-background pt-16 lg:py-20">
+    <motion.section className="bg-background  dark:bg-[#0e1527] pt-16 lg:py-20">
       <div className="container mx-auto px-4">
         {/* Header */}
         <div className="text-center mb-12">
@@ -57,7 +56,7 @@ const SpecialtiesCarousel = () => {
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             transition={{ delay: 0.2 }}
-            className="text-3xl md:text-4xl font-bold text-gray-800 dark:text-white mb-4"
+            className="text-3xl md:text-4xl font-bold text-default-800 dark:text-white mb-4"
           >
             Our Medical Specialties
           </motion.h2>
@@ -65,7 +64,7 @@ const SpecialtiesCarousel = () => {
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             transition={{ delay: 0.4 }}
-            className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto"
+            className="text-lg text-default-600 dark:text-default-300 max-w-2xl mx-auto"
           >
             Explore our comprehensive range of medical specialties with top-tier
             healthcare professionals
@@ -84,7 +83,7 @@ const SpecialtiesCarousel = () => {
             autoplay={{
               disableOnInteraction: false,
               pauseOnMouseEnter: true,
-              delay: 4000,
+              delay: 2000,
             }}
             breakpoints={{
               1280: { slidesPerView: 3 },
@@ -109,21 +108,21 @@ const SpecialtiesCarousel = () => {
                     initial={{ opacity: 0, scale: 0.8 }}
                     whileInView={{ opacity: 1, scale: 1 }}
                     transition={{ duration: 0.3, delay: index * 0.1 }}
-                    className="group relative bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 text-left border dark:border-0 h-full"
+                    className="group relative bg-card rounded-lg shadow-md p-6 text-left border dark:border-0 h-full"
                   >
-                    <div className="absolute top-4 right-4 bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 text-xs font-medium px-2.5 py-0.5 rounded-full">
+                    <div className="absolute top-4 right-4 bg-primary-50 dark:bg-primary-900/30 text-primary  text-xs font-medium px-2.5 py-0.5 rounded-full">
                       {item.count}+ Doctors
                     </div>
 
-                    <div className="flex items-center justify-center h-12 w-12 rounded-lg bg-blue-100 dark:bg-blue-900/50 text-blue-600 dark:text-blue-400 mb-4">
+                    <div className="flex items-center justify-center h-12 w-12 rounded-lg bg-primary-100 dark:bg-primary-900/50 text-primary-600 dark:text-primary-400 mb-4">
                       <Icon icon="heroicons:user-group" className="w-6 h-6" />
                     </div>
 
                     <div>
-                      <h3 className="text-base font-semibold text-gray-800 dark:text-white line-clamp-2">
+                      <h3 className="text-base font-semibold text-default-800 dark:text-white line-clamp-2">
                         {item.name}
                       </h3>
-                      <button className="mt-3 text-sm text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 flex items-center gap-1">
+                      <button className="mt-3 text-sm text-primary-600 dark:text-primary-400 hover:text-primary-800 dark:hover:text-primary-300 flex items-center gap-1">
                         View specialists
                         <Icon
                           icon="heroicons:arrow-right"
@@ -138,22 +137,13 @@ const SpecialtiesCarousel = () => {
           </Swiper>
 
           {/* Custom Navigation */}
-          <button className="specialty-prev absolute left-4 md:left-0 top-1/2 -translate-y-1/2 z-10 w-10 h-10 rounded-full bg-white dark:bg-gray-800 shadow-md flex items-center justify-center text-gray-700 dark:text-gray-300 hover:bg-blue-100 dark:hover:bg-blue-900/50 transition-colors -translate-x-1/2">
+          <button className="specialty-prev absolute left-4 md:left-0 top-1/2 -translate-y-1/2 z-10 w-10 h-10 rounded-full bg-white dark:bg-default-800 shadow-md flex items-center justify-center text-default-700 dark:text-default-300 hover:bg-primary-100 dark:hover:bg-primary-900/50 transition-colors -translate-x-1/2">
             <Icon icon="heroicons:chevron-left" className="w-5 h-5" />
           </button>
-          <button className="specialty-next absolute right-4 md:right-0 top-1/2 -translate-y-1/2 z-10 w-10 h-10 rounded-full bg-white dark:bg-gray-800 shadow-md flex items-center justify-center text-gray-700 dark:text-gray-300 hover:bg-blue-100 dark:hover:bg-blue-900/50 transition-colors translate-x-1/2">
+          <button className="specialty-next absolute right-4 md:right-0 top-1/2 -translate-y-1/2 z-10 w-10 h-10 rounded-full bg-white dark:bg-default-800 shadow-md flex items-center justify-center text-default-700 dark:text-default-300 hover:bg-primary-100 dark:hover:bg-primary-900/50 transition-colors translate-x-1/2">
             <Icon icon="heroicons:chevron-right" className="w-5 h-5" />
           </button>
         </div>
-
-        {/* View All Button */}
-        <AnimatedButton
-          as="link"
-          href="/doctors"
-          text="View Specialties"
-          icon="heroicons:arrow-right"
-          delay={0.4}
-        />
       </div>
     </motion.section>
   );

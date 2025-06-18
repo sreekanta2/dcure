@@ -59,7 +59,7 @@ const faqs = [
 
 const Faq = () => {
   return (
-    <section className=" bg-card   py-16 lg:py-20">
+    <section className="   py-16 lg:py-20">
       <motion.div
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -112,7 +112,7 @@ const Faq = () => {
                 >
                   <AccordionItem
                     value={`item-${i}`}
-                    className="bg-primary/50 dark:bg-gray-900 text-default-900"
+                    className="  dark:bg-gray-900 text-default-900"
                   >
                     <AccordionTrigger className="text-left font-medium">
                       {faq.question}

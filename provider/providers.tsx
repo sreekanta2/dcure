@@ -1,11 +1,9 @@
 "use client";
 import { SonnToaster } from "@/components/ui/sonner";
-import { Toaster as ReactToaster } from "@/components/ui/toaster";
 import { cn } from "@/lib/utils";
 
 import { ThemeProvider } from "next-themes";
 import { Poppins } from "next/font/google";
-import { Toaster } from "react-hot-toast";
 
 const poppins = Poppins({ subsets: ["latin"], weight: ["400", "600", "700"] });
 const Providers = ({ children }: { children: React.ReactNode }) => {
@@ -16,11 +14,8 @@ const Providers = ({ children }: { children: React.ReactNode }) => {
         enableSystem={false}
         defaultTheme="light"
       >
-        <div className={cn("h-full  ")}>
-          {children}
-          <ReactToaster />
-        </div>
-        <Toaster />
+        <div className={cn("h-full  ")}>{children}</div>
+
         <SonnToaster />
       </ThemeProvider>
     </body>

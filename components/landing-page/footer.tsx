@@ -29,7 +29,7 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="relative bg-primary-900 dark:bg-default-50">
+    <footer className="relative bg-primary-100 dark:bg-default-50">
       {/* Background image with overlay */}
       <div className="absolute inset-0 z-0">
         <Image
@@ -47,12 +47,12 @@ const Footer = () => {
       <div className="container pt-16 space-y-4 relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {/* Logo and social links */}
-          <div className="w-full max-w-xl mx-auto flex flex-col items-start text-default-100">
+          <div className="w-full max-w-xl mx-auto flex flex-col items-start text-default-600">
             <Link href="/" className="flex items-center gap-1">
               <SiteLogo className="h-8 w-8 text-primary" />
               <span className="text-primary-500 font-medium text-xl">Care</span>
             </Link>
-            <p className="text-sm text-default-200 dark:text-default-600 mt-3">
+            <p className="text-sm text-default-600 mt-3">
               Effortlessly schedule your medical appointments with Doccure.
               Connect with healthcare professionals, manage appointments &
               prioritize your well being
@@ -78,7 +78,7 @@ const Footer = () => {
           </div>
 
           {/* For Patients */}
-          <div className="w-full max-w-xl mx-auto flex flex-col text-default-100 dark:text-default-600 space-y-2">
+          <div className="w-full max-w-xl mx-auto flex flex-col text-default-600 dark:text-default-600 space-y-2">
             <h1 className="text-lg font-bold">Important Links</h1>
             <ul className="space-y-2">
               <li className="text-md w-full group transition duration-300 ease-out hover:translate-x-2 cursor-pointer">
@@ -97,7 +97,7 @@ const Footer = () => {
           </div>
 
           {/* Contact Info */}
-          <div className="w-full max-w-xl mx-auto flex flex-col text-default-100 dark:text-default-600 space-y-2">
+          <div className="w-full max-w-xl mx-auto flex flex-col text-default-600 dark:text-default-600 space-y-2">
             <h1 className="text-lg font-bold">Contact Us</h1>
             <ul>
               <li className="text-md w-full group transition duration-300 ease-out hover:translate-x-2 cursor-pointer">

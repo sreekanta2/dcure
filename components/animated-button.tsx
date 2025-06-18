@@ -169,7 +169,7 @@ export const AnimatedButton = ({
     >
       {as === "link" ? (
         <Link href={href || ""} passHref legacyBehavior>
-          <motion.a {...motionProps}>
+          <div>
             {iconPosition === "left" && icon && (
               <motion.span variants={iconVariants}>
                 <Icon icon={icon} className={iconClassName} />
@@ -181,10 +181,10 @@ export const AnimatedButton = ({
                 <Icon icon={icon} className={iconClassName} />
               </motion.span>
             )}
-          </motion.a>
+          </div>
         </Link>
       ) : (
-        <motion.button {...motionProps}>
+        <button>
           {iconPosition === "left" && icon && (
             <motion.span variants={iconVariants}>
               <Icon icon={icon} className={iconClassName} />
@@ -196,7 +196,7 @@ export const AnimatedButton = ({
               <Icon icon={icon} className={iconClassName} />
             </motion.span>
           )}
-        </motion.button>
+        </button>
       )}
     </motion.div>
   );

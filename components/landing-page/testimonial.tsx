@@ -80,7 +80,7 @@ const Testimonial = () => {
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6, ease: "easeOut" }}
       viewport={{ once: true, margin: "0px 0px -100px 0px" }}
-      className="bg-background pt-16 lg:py-20"
+      className="bg-background  dark:bg-[#0e1527] pt-16 lg:py-20"
     >
       <div className="container mx-auto px-4">
         {/* Header */}
@@ -119,10 +119,8 @@ const Testimonial = () => {
               delay: 4000,
             }}
             breakpoints={{
-              1536: { slidesPerView: 1 },
-              1280: { slidesPerView: 2 },
-              1024: { slidesPerView: 3 },
-              768: { slidesPerView: 2 },
+              1024: { slidesPerView: 2 },
+              800: { slidesPerView: 2 },
               640: { slidesPerView: 1 },
               0: { slidesPerView: 1 },
             }}

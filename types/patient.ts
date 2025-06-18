@@ -9,4 +9,6 @@ export interface IReview {
   patient: Patient;
   rating: number;
   comment: string;
+  createdAt?: string;
+  updatedAt?: string;
 }

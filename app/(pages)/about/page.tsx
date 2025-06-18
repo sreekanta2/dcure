@@ -22,7 +22,7 @@ export default function AboutUs() {
       />
 
       {/* Our Story */}
-      <section className="py-20 bg-background">
+      <section className="py-20 bg-background dark:bg-[#0e1527]">
         <div className="container mx-auto px-6">
           <div className="flex flex-col md:flex-row items-center gap-12">
             <motion.div
@@ -133,60 +133,6 @@ export default function AboutUs() {
                 <p className="text-default-600">{item.description}</p>
               </motion.div>
             ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Technology */}
-      <section className="py-20 bg-card">
-        <div className="container mx-auto px-6">
-          <div className="flex flex-col md:flex-row-reverse items-center gap-12">
-            <motion.div
-              initial={{ opacity: 0, x: 50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
-              className="md:w-1/2"
-            >
-              <h2 className="text-3xl font-bold text-default-800 mb-6">
-                Advanced Technology
-              </h2>
-              <p className="text-lg text-default-600 mb-6">
-                MedCare HMS leverages the latest technologies to deliver a
-                seamless, integrated hospital management experience.
-              </p>
-              <ul className="space-y-4">
-                {[
-                  "AI-powered patient flow optimization",
-                  "Blockchain-secured medical records",
-                  "Cloud-based infrastructure for 99.99% uptime",
-                  "IoT-enabled equipment monitoring",
-                  "Predictive analytics for resource planning",
-                  "Mobile-first design for on-the-go access",
-                ].map((item, index) => (
-                  <li key={index} className="flex items-start">
-                    <Icon
-                      icon="carbon:checkmark"
-                      className="text-green-500 w-5 h-5 mt-1 mr-2"
-                    />
-                    <span className="text-default-700">{item}</span>
-                  </li>
-                ))}
-              </ul>
-            </motion.div>
-            <motion.div
-              initial={{ opacity: 0, x: -50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
-              className="md:w-1/2 bg-default-100 rounded-xl overflow-hidden"
-            >
-              <img
-                src="/images/hms-dashboard.jpg"
-                alt="HMS dashboard interface"
-                className="w-full h-auto object-cover"
-              />
-            </motion.div>
           </div>
         </div>
       </section>

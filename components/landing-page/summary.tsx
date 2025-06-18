@@ -6,7 +6,7 @@ import Image from "next/image";
 
 export default function Summary() {
   return (
-    <div className="  py-16 lg:py-20  ">
+    <div className=" dark:bg-[#0e1527]  py-16 lg:py-20  dark:shadow-sm ">
       <div className="text-center mb-12  ">
         <motion.h2
           initial={{ opacity: 0 }}
@@ -14,7 +14,7 @@ export default function Summary() {
           transition={{ delay: 0.2 }}
           className="text-3xl md:text-4xl font-bold text-gray-800 dark:text-white mb-4"
         >
-          Our Medical Specialties
+          Our Process
         </motion.h2>
         <motion.p
           initial={{ opacity: 0 }}

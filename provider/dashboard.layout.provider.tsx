@@ -31,7 +31,7 @@ const DashBoardLayoutProvider = ({
   }
 
   return (
-    <div className="max-w-[1360px] mx-auto">
+    <div>
       <Header handleOpenSearch={() => setOpen(true)} />
       <Sidebar />
 
@@ -56,8 +56,7 @@ export default DashBoardLayoutProvider;
 
 const LayoutWrapper = ({
   children,
-  setOpen,
-  open,
+
   location,
 }: {
   children: React.ReactNode;
