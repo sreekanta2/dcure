@@ -10,15 +10,15 @@ export default async function FavoritesCard() {
   return (
     <Card className="border">
       <CardHeader className="flex-row items-center justify-between border-none pb-0">
-        <CardTitle> Favourite Doctors </CardTitle>
+        <CardTitle> Favorite Doctors </CardTitle>
       </CardHeader>
       <hr className="my-2" />
 
-      <CardContent className="  space-y-2 max-h-[600px] px-2    ">
+      <CardContent className="  space-y-2 max-h-[600px] px-2 ">
         {doctorResponse?.data?.length > 0 &&
           doctorResponse?.data.map((doctor: any) => (
             <div
-              className="w-full flex justify-between items-center p-2 border   rounded-md hover:bg-default-200 dark:hover:bg-default-200 transition-all duration-500  "
+              className="w-full flex justify-between items-center p-2 border   rounded-md hover:bg-default-200 dark:hover:bg-default-200 transition-all duration-500"
               key={doctor.id}
             >
               <div className="flex gap-3 items-start">

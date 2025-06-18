@@ -204,14 +204,14 @@ const PatientDashboardPage = async ({
 
       {/* <!-- Favorite Doctors Section --> */}
       <section
-        className="py-4 bg-white rounded-lg shadow-sm border border-gray-200"
+        className="py-4 bg-background rounded-lg shadow-sm border "
         aria-labelledby="favorite-doctors-heading"
       >
         <header className="p-6 pb-0">
           <div className="flex flex-col md:flex-row items-center flex-wrap justify-between gap-4">
             <h2
               id="favorite-doctors-heading"
-              className="text-xl font-semibold text-gray-900"
+              className="text-xl font-semibold text-default-900"
             >
               Favorite Doctors
             </h2>
@@ -226,7 +226,7 @@ const PatientDashboardPage = async ({
           </div>
         </header>
 
-        <hr className="my-4 border-gray-200" />
+        <hr className="my-4 border-default-200" />
 
         <div className="p-6 space-y-6">
           <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
@@ -234,7 +234,7 @@ const PatientDashboardPage = async ({
               doctors.data.map((doctor: any) => (
                 <li
                   key={doctor.id}
-                  className="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden hover:shadow-md transition-shadow"
+                  className="bg-card rounded-lg shadow-sm border border-default-200 overflow-hidden hover:shadow-md transition-shadow"
                 >
                   <FavouritesDoctorCard doctor={doctor} />
                 </li>
@@ -242,11 +242,11 @@ const PatientDashboardPage = async ({
             ) : (
               <li className="col-span-full">
                 <div className="text-center p-8">
-                  <UserX className="mx-auto h-12 w-12 text-gray-400" />
-                  <h3 className="mt-2 text-lg font-medium text-gray-900">
+                  <UserX className="mx-auto h-12 w-12 text-default-400" />
+                  <h3 className="mt-2 text-lg font-medium text-default-900">
                     No favorite doctors
                   </h3>
-                  <p className="mt-1 text-gray-500">
+                  <p className="mt-1 text-default-500">
                     You haven't added any doctors to your favorites yet.
                   </p>
                 </div>

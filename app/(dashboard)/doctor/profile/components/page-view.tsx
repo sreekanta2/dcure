@@ -30,9 +30,7 @@ const DoctorSettingsPageView = async ({
   const Insurances = dynamic(() => import("./insurances/insurances"), {
     loading: () => <Loader />,
   });
-  const Clinics = dynamic(() => import("./clinics/clinics"), {
-    loading: () => <Loader />,
-  });
+
   const doctor = await getDoctor("1", 1, 5);
   if (!doctor) {
     return <div>Doctor not found</div>;
@@ -86,13 +84,6 @@ const DoctorSettingsPageView = async ({
           <TabsContent value="language" className="mt-4">
             <Suspense fallback={<Loader />}>
               <Language />
-            </Suspense>
-          </TabsContent>
-          <TabsContent value="clinics" className="mt-4">
-            <Suspense fallback={<Loader />}>
-              {doctor?.data?.clinics && (
-                <Clinics clinics={doctor?.data?.clinics} />
-              )}
             </Suspense>
           </TabsContent>
         </Tabs>

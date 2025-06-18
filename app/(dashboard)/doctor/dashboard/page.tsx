@@ -5,8 +5,7 @@ import Clinics from "./components/clinics";
 
 import RecentPatients from "./components/patients-and-invoices/patients-component";
 import ReportsSnapshot from "./components/reports-snapshot";
-import UserDeviceReport from "./components/user-device-report";
-import UserStats from "./components/user-stats-chart";
+
 import UsersStat from "./components/users-stat";
 
 const DashboardPageView = () => {
@@ -36,7 +35,7 @@ const DashboardPageView = () => {
             </CardTitle>
           </CardHeader>
           <CardContent>
-            <UserStats />
+            <h1>hello</h1>
           </CardContent>
         </Card>
         <Card>
@@ -46,9 +45,7 @@ const DashboardPageView = () => {
             </CardTitle>
           </CardHeader>
           <CardContent>
-            <div className="dashtail-legend">
-              <UserDeviceReport />
-            </div>
+            <div className="dashtail-legend">User table</div>
           </CardContent>
         </Card>
       </div>
