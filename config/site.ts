@@ -19,11 +19,11 @@
 // config/site.ts
 export const siteConfig = {
   sidebarBg: "none",
-  name: "MediBook - Find & Book Doctors Online",
-  url: "https://medibook.com", // Your actual domain
+  name: "Doccare - Find & Book Doctors Online",
+  url: "https://Doccare.com", // Your actual domain
   description:
     "Find and book appointments with top-rated doctors by specialty, location, and availability. Read verified patient reviews.",
-  author: "MediBook Team",
+  author: "Doccare Team",
 
   // SEO Enhancements
   googleSiteVerification: "ABC123XYZ", // From Google Search Console
@@ -40,21 +40,21 @@ export const siteConfig = {
   ],
 
   // Social & Images
-  twitterHandle: "@MediBookApp",
-  ogImage: "https://dcure-eight.vercel.app/images/logo/logo.png",
-  logo: "https://dcure-eight.vercel.app/images/logo/logo.png",
+  twitterHandle: "@DoccareApp",
+  ogImage: `${process.env.NEXT_PUBLIC_API_URL}/images/logo/logo.png`,
+  logo: `${process.env.NEXT_PUBLIC_API_URL}/images/logo/logo.png`,
 
   // Contact Information
   contact: {
-    phone: "+1-800-555-HEAL",
-    email: "support@medibook.com",
+    phone: "+8801737813575",
+    email: "support@Doccare.com",
   },
 
   // Social Links
   socialLinks: [
-    { name: "Facebook", url: "https://facebook.com/MediBook" },
-    { name: "Twitter", url: "https://twitter.com/MediBookApp" },
-    { name: "Instagram", url: "https://instagram.com/MediBookApp" },
-    { name: "LinkedIn", url: "https://linkedin.com/company/MediBook" },
+    { name: "Facebook", url: "https://facebook.com/Doccare" },
+    { name: "Twitter", url: "https://twitter.com/DoccareApp" },
+    { name: "Instagram", url: "https://instagram.com/DoccareApp" },
+    { name: "LinkedIn", url: "https://linkedin.com/company/Doccare" },
   ],
 };
