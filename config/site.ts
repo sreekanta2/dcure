@@ -20,7 +20,7 @@
 export const siteConfig = {
   sidebarBg: "none",
   name: "Doccare - Find & Book Doctors Online",
-  url: "https://Doccare.com", // Your actual domain
+  url: `${process.env.NEXT_PUBLIC_SITE_URL || "https://doccare.com"}`,
   description:
     "Find and book appointments with top-rated doctors by specialty, location, and availability. Read verified patient reviews.",
   author: "Doccare Team",
