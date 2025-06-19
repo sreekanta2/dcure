@@ -8,7 +8,7 @@ import { Poppins } from "next/font/google";
 const poppins = Poppins({ subsets: ["latin"], weight: ["400", "600", "700"] });
 const Providers = ({ children }: { children: React.ReactNode }) => {
   return (
-    <body className={cn("decure-app ", poppins.className)}>
+    <body className={cn(poppins.className)}>
       <ThemeProvider
         attribute="class"
         enableSystem={false}
