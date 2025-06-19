@@ -12,7 +12,14 @@ import { useSidebar } from "@/store";
 import { motion } from "framer-motion";
 import { usePathname } from "next/navigation";
 
+import {
+  adminConfig,
+  doctorConfig,
+  MenuItemProps,
+  patientConfig,
+} from "@/config/menus";
 import { cn } from "@/lib/utils";
+import { useSession } from "next-auth/react";
 const DashBoardLayoutProvider = ({
   children,
 }: {
@@ -65,6 +72,25 @@ const LayoutWrapper = ({
   open: boolean;
   location: any;
 }) => {
+  const session = useSession();
+
+  let menus: MenuItemProps[];
+
+  switch (session?.data?.user?.role) {
+    case "admin":
+      menus = adminConfig;
+      break;
+
+    case "doctor":
+      menus = doctorConfig;
+      break;
+
+    case "patient":
+      menus = patientConfig;
+      break;
+    default:
+      menus = [];
+  }
   return (
     <>
       <motion.div
@@ -95,7 +121,7 @@ const LayoutWrapper = ({
         <main>{children}</main>
       </motion.div>
 
-      <MobileSidebar className="left-[300px]" />
+      <MobileSidebar menus={menus} className="left-[300px]" />
     </>
   );
 };

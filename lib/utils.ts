@@ -9,6 +9,8 @@ export const isLocationMatch = (
   targetLocation: any,
   locationName: any
 ): boolean => {
+  if (!targetLocation || !locationName) return false;
+  // Check if targetLocation is a string and locationName is a string
   return locationName.split("/").pop() === targetLocation;
 };
 

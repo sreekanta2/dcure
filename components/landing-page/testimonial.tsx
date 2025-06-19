@@ -105,7 +105,7 @@ const Testimonial = () => {
         </div>
 
         {/* Carousel */}
-        <div className="relative px-4 md:px-0">
+        <div className="relative  ">
           <Swiper
             slidesPerView={1}
             spaceBetween={20}

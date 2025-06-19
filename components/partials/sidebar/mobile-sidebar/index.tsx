@@ -5,44 +5,32 @@ import React, { useState } from "react";
 import SidebarLogo from "../common/logo";
 
 import LogoutButton from "@/components/logout";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { Button } from "@/components/ui/button";
 import { ScrollArea } from "@/components/ui/scroll-area";
-import {
-  adminConfig,
-  doctorConfig,
-  MenuItemProps,
-  patientConfig,
- 
-} from "@/config/menus";
+import { Separator } from "@/components/ui/separator";
+import { MenuItemProps } from "@/config/menus";
+import { LayoutDashboard, LogIn, Settings, User } from "lucide-react";
 import { useSession } from "next-auth/react";
+import Link from "next/link";
 import { usePathname } from "next/navigation";
 import MenuLabel from "../common/menu-label";
 import NestedSubMenu from "../common/nested-menus";
 import SingleMenuItem from "./single-menu-item";
 import SubMenuHandler from "./sub-menu-handler";
-const MobileSidebar = ({ className }: { className?: string }) => {
+const MobileSidebar = ({
+  className,
+  menus,
+}: {
+  className?: string;
+  menus: MenuItemProps[];
+}) => {
   const { sidebarBg, mobileMenu, setMobileMenu } = useSidebar();
   const [activeSubmenu, setActiveSubmenu] = useState<number | null>(null);
   const [activeMultiMenu, setMultiMenu] = useState<number | null>(null);
   const session = useSession();
   const { collapsed } = useSidebar();
-  let menus: MenuItemProps[];
 
-  switch (session?.data?.user?.role) {
-    case "admin":
-      menus = adminConfig;
-      break;
-
-    case "doctor":
-      menus = doctorConfig;
-      break;
-    
-
-    case "patient":
-      menus = patientConfig;
-      break;
-    default:
-      menus = [];
-  }
   const toggleSubmenu = (i: number) => {
     if (activeSubmenu === i) {
       setActiveSubmenu(null);
@@ -79,6 +67,9 @@ const MobileSidebar = ({ className }: { className?: string }) => {
           }
         });
       }
+      if (isLocationMatch(item.href, locationName)) {
+        subMenuIndex = i;
+      }
     });
     setActiveSubmenu(subMenuIndex);
     setMultiMenu(multiMenuIndex);
@@ -90,7 +81,7 @@ const MobileSidebar = ({ className }: { className?: string }) => {
     <>
       <div
         className={cn(
-          "fixed top-0  bg-card h-full w-[248px] z-[9999] ",
+          "fixed top-0  bg-card h-screen w-[248px] z-[9999] ",
           className,
           {
             " -left-[300px] invisible opacity-0  ": !mobileMenu,
@@ -115,7 +106,7 @@ const MobileSidebar = ({ className }: { className?: string }) => {
               " space-y-2 ": collapsed,
             })}
           >
-            {menus.map((item, i) => (
+            {menus?.map((item, i) => (
               <li key={`menu_key_${i}`} className="my-1">
                 {/* single menu  */}
 
@@ -154,13 +145,61 @@ const MobileSidebar = ({ className }: { className?: string }) => {
               </li>
             ))}
           </ul>
-          <LogoutButton />
+          <div className="mt-auto mb-2">
+            <Separator className="mb-4" />
+            {!session.data?.user ? (
+              <div className="my-4">
+                <Button className="w-full">
+                  <Link
+                    href="/auth/login"
+                    className="font-semibold mx-3 flex items-center gap-1"
+                  >
+                    <LogIn size={16} /> Login
+                  </Link>
+                </Button>
+              </div>
+            ) : (
+              <div className=" ">
+                <div className="  flex items-center gap-2">
+                  <Avatar>
+                    <AvatarImage src={session?.data?.user?.image || ""} />
+                    <AvatarFallback className="p-1 bg-primary">
+                      <User />
+                    </AvatarFallback>
+                  </Avatar>
+                  <div>
+                    <h1 className="font-medium">{session?.data?.user?.name}</h1>
+                    <p className="text-xs">{session?.data?.user?.email}</p>
+                  </div>
+                </div>
+                {[
+                  {
+                    name: "Dashboard",
+                    icon: LayoutDashboard,
+                    href: `/${session?.data?.user?.role}/dashboard`,
+                  },
+                  { name: "Profile", icon: User, href: "/profile" },
+                  { name: "Settings", icon: Settings, href: "/settings" },
+                ].map((item, index) => (
+                  <Link
+                    href={item.href}
+                    key={`info-menu-${index}`}
+                    className="w-full cursor-pointer hover:bg-primary hover:text-default-100 p-2 rounded-md flex items-center gap-1"
+                  >
+                    <item.icon className="w-4 h-4" />
+                    {item.name}
+                  </Link>
+                ))}
+                <LogoutButton className="hover:bg-primary hover:text-default-100  rounded-md w-full" />
+              </div>
+            )}
+          </div>
         </ScrollArea>
       </div>
       {mobileMenu && (
         <div
           onClick={() => setMobileMenu(false)}
-          className="overlay bg-black/60 backdrop-filter backdrop-blur-sm opacity-100 fixed inset-0 z-[999]"
+          className="overlay bg-black/60 backdrop-filter backdrop-blur-sm opacity-100 fixed inset-0 z-[999] h-screen"
         ></div>
       )}
     </>

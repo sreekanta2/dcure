@@ -7,13 +7,12 @@ import { useMediaQuery } from "@/hooks/use-media-query";
 import FullScreenToggle from "@/components/partials/header/full-screen";
 import MobileMenuHandler from "@/components/partials/header/mobile-menu-handler";
 import ProfileInfo from "@/components/partials/header/profile-info";
-import { useSidebar } from "@/store";
 import { useSession } from "next-auth/react";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 
+import MobileSidebar from "@/components/partials/sidebar/mobile-sidebar";
 import { menus } from "@/config/menus";
-import LandingMobileSidebar from "./landing-mobile-sidebar";
 const Header = () => {
   const [scroll, setScroll] = useState<boolean>(false);
   useEffect(() => {
@@ -24,7 +23,6 @@ const Header = () => {
 
   const isDesktop = useMediaQuery("(min-width: 1024px)");
   const session = useSession();
-  const { mobileMenu } = useSidebar();
 
   if (!isDesktop) {
     return (
@@ -38,7 +36,7 @@ const Header = () => {
         >
           <nav className="container flex justify-between relative z-50">
             <div className="w-full flex items-center gap-1">
-              {mobileMenu && <LandingMobileSidebar />}
+              <MobileSidebar menus={menus} />
               <Link href="/" className="flex gap-1 items-center">
                 <SiteLogo className="h-6 w-6  text-primary" />
                 <span className="text-primary-500 font-medium text-xl">
@@ -67,7 +65,7 @@ const Header = () => {
       <nav className="container   flex justify-between">
         <Link href="/" className="flex items-center gap-1">
           <SiteLogo className="h-8 w-8  text-primary" />
-          <span className="text-primary-500 font-medium text-xl">Deccure</span>
+          <span className="text-primary-500 font-medium text-xl">cure</span>
         </Link>
         <ul className="  flex gap-4">
           {menus?.map((item, i) => (
@@ -75,7 +73,7 @@ const Header = () => {
               key={`main-item-${i}`}
               className=" block text-base font-medium text-default-600 hover:text-primary"
             >
-              <Link href={item.href}>{item.title} </Link>
+              <Link href={item.href || ""}>{item.title} </Link>
             </li>
           ))}
         </ul>

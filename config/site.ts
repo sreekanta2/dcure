@@ -41,8 +41,8 @@ export const siteConfig = {
 
   // Social & Images
   twitterHandle: "@MediBookApp",
-  ogImage: "https://medibook.com/images/og-image.jpg",
-  logo: "https://medibook.com/images/logo.png",
+  ogImage: "https://dcure-eight.vercel.app/images/logo/logo.png",
+  logo: "https://dcure-eight.vercel.app/images/logo/logo.png",
 
   // Contact Information
   contact: {

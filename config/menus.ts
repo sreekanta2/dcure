@@ -12,7 +12,7 @@ import {
   Users,
 } from "lucide-react";
 
-export const menus = [
+export const menus: MenuItemProps[] = [
   {
     title: "Doctors",
     href: "/doctors",
