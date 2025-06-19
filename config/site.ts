@@ -41,8 +41,8 @@ export const siteConfig = {
 
   // Social & Images
   twitterHandle: "@DoccareApp",
-  ogImage: `${process.env.NEXT_PUBLIC_API_URL}/images/logo/logo.png`,
-  logo: `${process.env.NEXT_PUBLIC_API_URL}/images/logo/logo.png`,
+  ogImage: `${process.env.NEXT_PUBLIC_API_URL}/assets/logo.png`,
+  logo: `${process.env.NEXT_PUBLIC_API_URL}/public/images/logo/logo.png`,
 
   // Contact Information
   contact: {
