@@ -1,3 +1,4 @@
+import { Hero } from "@/components/hero";
 import { CheckMark, User } from "@/components/svg";
 import { Button } from "@/components/ui/button";
 import { Rating } from "@/components/ui/rating";
@@ -7,7 +8,6 @@ import { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import ClinicCard from "./components/clinic-card";
-import DoctorHero from "./components/hero";
 import ReviewForm from "./components/review-form";
 import ReviewPage from "./components/review-page";
 
@@ -133,10 +133,17 @@ export default async function DoctorPage({
   const hospital = "Mymensingh Medical College & Hospital";
 
   return (
-    <>
-      <DoctorHero doctorId={doctorId} />
+    <div className="bg-background">
+      <Hero
+        title={<span className="text-primary">Search Doctor</span>}
+        breadcrumbs={[
+          { label: "Home", href: "/" },
+          { label: "Doctors", href: "/doctors" },
+          { label: doctorName },
+        ]}
+      />
 
-      <main className="bg-background">
+      <main className="bg-card/50 backdrop-blur-lg shadow-md dark:bg-card/70">
         <div className="container space-y-8 py-4">
           {/* Doctor Profile Section */}
           <article
@@ -431,6 +438,6 @@ export default async function DoctorPage({
           ],
         }}
       />
-    </>
+    </div>
   );
 }

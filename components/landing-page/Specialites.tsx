@@ -48,7 +48,7 @@ const specialtiesWithCount = [
 
 const SpecialtiesCarousel = () => {
   return (
-    <motion.section className="bg-background  dark:bg-[#0e1527] pt-16 lg:py-20">
+    <motion.section className="bg-background    pt-16 lg:py-20">
       <div className="container    ">
         {/* Header */}
         <div className="text-center mb-12">

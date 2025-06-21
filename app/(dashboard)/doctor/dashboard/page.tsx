@@ -1,73 +1,31 @@
-import DatePickerWithRange from "@/components/date-picker-with-range";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { getPatients } from "@/config/patients/config";
 import Appointments from "./components/appointments";
 import Clinics from "./components/clinics";
+import { clinics } from "./components/data";
 
+import { getAppointments } from "@/config/appointments/appointments.config";
 import RecentPatients from "./components/patients-and-invoices/patients-component";
 import ReportsSnapshot from "./components/reports-snapshot";
 
-import UsersStat from "./components/users-stat";
-
-const DashboardPageView = () => {
+const DashboardPageView = async () => {
+  const patients = await getPatients({ page: 1, limit: 3 });
+  const appointments = await getAppointments({ page: 1, limit: 3 });
   return (
-    <div className="space-y-6">
-      <div className="flex items-center flex-wrap justify-between gap-4">
-        <div className="text-2xl font-medium text-default-800 ">
-          Analytics dashboard
-        </div>
-        <DatePickerWithRange />
-      </div>
-      {/* reports area */}
-      <div className="grid grid-cols-12  gap-6 ">
-        <div className="col-span-12 lg:col-span-8">
-          <ReportsSnapshot />
-        </div>
-        <div className="col-span-12 lg:col-span-4">
-          <UsersStat />
-        </div>
+    <div className="space-y-6 bg-card/50 backdrop-blur-lg shadow-md dark:bg-card/70 p-4 rounded-md">
+      <div className="text-2xl font-medium text-default-800 ">
+        Analytics dashboard
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-        <Card>
-          <CardHeader className="border-none p-6 pt-5 mb-0">
-            <CardTitle className="text-lg font-semibold text-default-900 p-0">
-              Paid and Refund
-            </CardTitle>
-          </CardHeader>
-          <CardContent>
-            <h1>hello</h1>
-          </CardContent>
-        </Card>
-        <Card>
-          <CardHeader className="border-none p-6 pt-5 mb-0">
-            <CardTitle className="text-lg font-semibold text-default-900 p-0">
-              Device Breakdown
-            </CardTitle>
-          </CardHeader>
-          <CardContent>
-            <div className="dashtail-legend">User table</div>
-          </CardContent>
-        </Card>
-      </div>
+      <ReportsSnapshot />
+
       {/* clinic and appointments */}
-      <div className="grid grid-cols-12 gap-6 items-stretch">
-        {" "}
-        {/* Add items-stretch */}
-        <div className="col-span-12 lg:col-span-6 h-full">
-          <Clinics />
-        </div>
-        <div className="col-span-12 lg:col-span-6 h-full">
-          <Appointments />
-        </div>
+      <div className=" flex flex-col md:flex-row gap-4">
+        <Clinics clinics={clinics} />
+
+        <RecentPatients patients={patients} />
       </div>
 
-      {/* recent patients and invoices */}
-
-      <div className="grid grid-cols-12 gap-6 ">
-        <div className="col-span-12 lg:col-span-6  ">
-          <RecentPatients />
-        </div>
-      </div>
+      <Appointments appointments={appointments} />
     </div>
   );
 };

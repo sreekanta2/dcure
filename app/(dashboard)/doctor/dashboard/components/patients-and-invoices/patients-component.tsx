@@ -1,10 +1,13 @@
-import { getPatients } from "@/config/patients/config";
+"use client";
 import Link from "next/link";
+import { useState } from "react";
 import PatientCard from "../../../_components/patients-card";
 
-const RecentPatients = async () => {
-  // Fetch doctors data based on page and limit
-  const patients = await getPatients({ page: 1, limit: 3 });
+const RecentPatients = ({ patients }: { patients: any }) => {
+  const [selectedPatient, setSelectedPatient] = useState<any>(null);
+  const handlePatientSelect = (patient: any) => {
+    setSelectedPatient(patient);
+  };
   return (
     <div className=" w-full">
       <div className="border p-4 bg-card rounded-md space-y-2">
@@ -18,6 +21,7 @@ const RecentPatients = async () => {
             <PatientCard patient={patient} key={patient.id} />
           ))}
         </div>
+
         <Link
           href="/doctor/patients"
           className=" text-default-700 text-sm hover:text-blue-400  text-center mt-4  flex justify-center  "

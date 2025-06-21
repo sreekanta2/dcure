@@ -105,7 +105,7 @@ export default function FilterForm() {
               <SelectTrigger className="h-10">
                 <SelectValue placeholder="Gender" />
               </SelectTrigger>
-              <SelectContent>
+              <SelectContent className="bg-background">
                 <SelectItem value="">All Genders</SelectItem>
                 <SelectItem value="male">Male</SelectItem>
                 <SelectItem value="female">Female</SelectItem>
@@ -123,7 +123,7 @@ export default function FilterForm() {
               <SelectTrigger className="h-10">
                 <SelectValue placeholder="Specialty" />
               </SelectTrigger>
-              <SelectContent>
+              <SelectContent className="bg-background">
                 <SelectItem value="">All Specialties</SelectItem>
                 {specialties.map((specialty) => (
                   <SelectItem key={specialty} value={specialty}>
@@ -143,7 +143,7 @@ export default function FilterForm() {
               <SelectTrigger className="h-10">
                 <SelectValue placeholder="Location" />
               </SelectTrigger>
-              <SelectContent>
+              <SelectContent className="bg-background">
                 <SelectItem value="">All Locations</SelectItem>
                 {locations.map((location) => (
                   <SelectItem key={location} value={location}>

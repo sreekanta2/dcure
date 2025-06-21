@@ -44,6 +44,7 @@ const config = {
         ring: "hsl(var(--ring) / <alpha-value>)",
         background: "hsl(var(--background) / <alpha-value>)",
         foreground: "hsl(var(--foreground) / <alpha-value>)",
+
         primary: {
           50: "hsl(var(--primary-50) / <alpha-value>)",
           100: "hsl(var(--primary-100) / <alpha-value>)",

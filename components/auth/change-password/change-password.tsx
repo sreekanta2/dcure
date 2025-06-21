@@ -39,7 +39,7 @@ export default function ChangePasswordForm() {
     }, 2000);
   };
   return (
-    <div className="w-full h-screen  max-w-3xl">
+    <div className="w-full h-screen  bg-card p-6 rounded-md">
       <div className="2xl:mt-8 mt-6 2xl:text-3xl lg:text-2xl text-xl font-bold text-default-900">
         Create New Password
       </div>

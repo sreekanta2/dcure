@@ -18,25 +18,27 @@ const Footer = () => {
 
   return (
     <div
-      style={{
-        marginLeft: collapsed ? "72px" : "248px",
-
-        position: "sticky",
-        top: "0",
-      }}
-      className="block  md:flex md:justify-between text-muted-foreground bg-card p-4"
+      className={`
+      sticky bottom-0 
+      
+      text-muted-foreground 
+      bg-card 
+      p-4 
+      ${collapsed ? "lg:ml-[72px]" : "lg:ml-[248px]"}
+      transition-[margin] duration-300
+    `}
     >
       <p className="sm:mb-0 text-xs md:text-sm">
-        COPYRIGHT © {new Date().getFullYear()} DashTail All rights Reserved
+        COPYRIGHT © {new Date().getFullYear()}
       </p>
       <p className="mb-0 text-xs md:text-sm">
         Hand-crafted & Made by{" "}
         <a
           className="text-primary"
           target="__blank"
-          href="https://codeshaper.net"
+          href="https://srikanto.site"
         >
-          Codeshaper
+          Srikanto
         </a>
       </p>
     </div>

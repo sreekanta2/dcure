@@ -78,11 +78,10 @@ export default function Summary() {
               <motion.div
                 key={index}
                 className="flex items-start gap-5 p-4 bg-white dark:bg-gray-800 rounded-xl shadow-sm hover:shadow-md transition-all duration-300"
-                initial={{ opacity: 0, x: 30 }}
-                whileInView={{ opacity: 1, x: 0 }}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.15 }}
-                whileHover={{ y: -3, scale: 1.02 }}
+                transition={{ duration: 0.3, delay: index * 0.15 }}
               >
                 <div
                   className={`flex-shrink-0 w-12 h-12 ${step.color} rounded-lg flex items-center justify-center`}

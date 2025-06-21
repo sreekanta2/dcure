@@ -2,6 +2,7 @@
 
 import { BreadcrumbItem, Breadcrumbs } from "@/components/ui/breadcrumbs";
 import { cn } from "@/lib/utils";
+import { motion } from "framer-motion";
 import Link from "next/link";
 import { ReactNode } from "react";
 
@@ -22,41 +23,40 @@ export const Hero = ({
   subtitle,
   breadcrumbs = [],
   backgroundImage = "https://dashboi-one.vercel.app/images/home/hero-bg.png",
-  overlay = true,
-  overlayGradient = "bg-gradient-to-b from-primary/30 dark:from-primary/20 dark:to-[#0F172A]",
-  className = "",
+
   contentClassName = "",
   titleClassName = "",
 }: HeroProps) => {
   return (
-    <section
-      className={cn(
-        "bg-cover bg-no-repeat bg-center relative md:h-[350px]",
-        className
-      )}
-      style={{
-        backgroundImage: backgroundImage
-          ? `url(${backgroundImage})`
-          : undefined,
-      }}
-    >
-      {overlay && (
-        <div
-          className={cn("w-full h-full absolute inset-0", overlayGradient)}
-        />
-      )}
+    <section className="relative bg-cover bg-center bg-no-repeat overflow-hidden">
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.8 }}
+        className="absolute inset-0 w-full h-full"
+        style={{
+          backgroundImage: backgroundImage
+            ? `url(${backgroundImage})`
+            : undefined,
+        }}
+      />
 
+      <div
+        className={cn(
+          "w-full h-full absolute inset-0 bg-gradient-to-r from-primary/20 to-secondary/20"
+        )}
+      />
       <div className="container relative z-10">
-        <div className="w-full pt-32 md:pt-32 pb-10 flex items-center justify-center">
+        <div className="w-full h-64 md:h-80 pb-10 flex items-end justify-center">
           <div
             className={cn(
-              "flex justify-center flex-col items-center text-center",
+              "flex justify-center flex-col items-center text-center mb-8",
               contentClassName
             )}
           >
             <h1
               className={cn(
-                "max-w-[600px] text-xl md:text-2xl xl:text-4xl xl:leading-[52px] font-semibold text-default-900",
+                "  text-xl md:text-2xl xl:text-4xl xl:leading-[52px] font-semibold text-default-900",
                 titleClassName
               )}
             >

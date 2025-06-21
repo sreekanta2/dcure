@@ -19,7 +19,7 @@ const LandingPageView = () => {
     return <LayoutLoader />;
   }
   return (
-    <div className="bg-background    ">
+    <div className="bg-card/50 backdrop-blur-lg shadow-md dark:bg-card/70">
       <Header />
       {/* Your code here */}
 

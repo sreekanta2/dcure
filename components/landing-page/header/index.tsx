@@ -13,6 +13,7 @@ import { useEffect, useState } from "react";
 
 import MobileSidebar from "@/components/partials/sidebar/mobile-sidebar";
 import { menus } from "@/config/menus";
+import { siteConfig } from "@/config/site";
 const Header = () => {
   const [scroll, setScroll] = useState<boolean>(false);
   useEffect(() => {
@@ -28,11 +29,9 @@ const Header = () => {
     return (
       <>
         <div
-          className={
-            scroll
-              ? " bg-card/50 backdrop-blur-lg shadow-xl  z-50   fixed top-0 left-0 w-full py-3"
-              : "fixed top-0 left-0 w-full py-6 z-50"
-          }
+          className={`fixed top-0 left-0 w-full z-50     ${
+            scroll ? "bg-card/50 backdrop-blur-lg shadow-xl py-3" : "py-6"
+          }`}
         >
           <nav className="container flex justify-between relative z-50">
             <div className="w-full flex items-center gap-1">
@@ -40,7 +39,7 @@ const Header = () => {
               <Link href="/" className="flex gap-1 items-center">
                 <SiteLogo className="h-6 w-6  text-primary" />
                 <span className="text-primary-500 font-medium text-xl">
-                  Decure
+                  {siteConfig.siteName}
                 </span>
               </Link>
             </div>

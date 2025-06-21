@@ -85,13 +85,13 @@ export default async function DoctorsPage({
   const doctorsResponse = await getDoctors({ page, limit, filter });
 
   return (
-    <>
+    <div className="bg-background min-h-screen">
       <Hero
         title={<span className="text-primary">Search Doctor</span>}
         breadcrumbs={[{ label: "Home", href: "/" }, { label: "Doctors" }]}
       />
 
-      <section className="bg-background">
+      <section className="bg-card/50 backdrop-blur-lg shadow-md dark:bg-card/70">
         <div className="container   relative   py-8">
           <FilterForm />
 
@@ -217,7 +217,7 @@ export default async function DoctorsPage({
                             className="w-fit"
                           >
                             <Link
-                              href={`/doctors/${doctor.id}`}
+                              href={`/doctors/${doctor.user.name}`}
                               aria-label="View doctor's chambers"
                             >
                               Chambers
@@ -340,6 +340,6 @@ export default async function DoctorsPage({
           />
         </div>
       </section>
-    </>
+    </div>
   );
 }

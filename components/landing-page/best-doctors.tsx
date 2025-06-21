@@ -133,7 +133,7 @@ const BestDoctors = () => {
       initial={{ opacity: 0, y: 50 }}
       animate={isInView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.8, ease: "easeOut" }}
-      className="py-16 lg:py-20 "
+      className="  py-16 lg:py-20 "
       aria-labelledby="best-doctors-heading"
     >
       <div className="container space-y-6  ">
@@ -144,7 +144,7 @@ const BestDoctors = () => {
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             transition={{ delay: 0.2 }}
-            className="text-3xl md:text-4xl font-bold text-gray-800 dark:text-white mb-4"
+            className="text-3xl md:text-4xl font-bold text-default-800   mb-4"
           >
             Our Expert Doctors
           </motion.h2>
@@ -152,7 +152,7 @@ const BestDoctors = () => {
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             transition={{ delay: 0.4 }}
-            className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto"
+            className="text-lg text-default-600  max-w-2xl mx-auto"
           >
             Book appointments with our top-rated healthcare professionals
           </motion.p>
@@ -162,14 +162,14 @@ const BestDoctors = () => {
         <div className="flex justify-end gap-3  ">
           <button
             onClick={() => swiperInstance?.slidePrev()}
-            className="w-10 h-10 rounded-full bg-white dark:bg-gray-800 shadow-md flex items-center justify-center text-gray-700 dark:text-gray-300 hover:bg-blue-100 dark:hover:bg-blue-900/50 transition-colors"
+            className="w-10 h-10 rounded-full bg-white dark:bg-default-800 shadow-md flex items-center justify-center text-default-700 dark:text-default-300 hover:bg-blue-100 dark:hover:bg-blue-900/50 transition-colors"
             aria-label="Previous doctors"
           >
             <ChevronLeft className="w-5 h-5" />
           </button>
           <button
             onClick={() => swiperInstance?.slideNext()}
-            className="w-10 h-10 rounded-full bg-white dark:bg-gray-800 shadow-md flex items-center justify-center text-gray-700 dark:text-gray-300 hover:bg-blue-100 dark:hover:bg-blue-900/50 transition-colors"
+            className="w-10 h-10 rounded-full bg-white dark:bg-default-800 shadow-md flex items-center justify-center text-default-700 dark:text-default-300 hover:bg-blue-100 dark:hover:bg-blue-900/50 transition-colors"
             aria-label="Next doctors"
           >
             <ChevronRight className="w-5 h-5" />
@@ -199,7 +199,7 @@ const BestDoctors = () => {
                 transition={{ duration: 0.15, delay: index * 0.1 }}
                 viewport={{ once: true }}
                 whileHover={{ y: -5 }}
-                className="group h-full bg-white dark:bg-gray-800 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 overflow-hidden border p-4 border-gray-100 dark:border-gray-700 space-y-4"
+                className="group h-full bg-card  rounded-xl shadow-md hover:shadow-lg transition-all duration-300 overflow-hidden border p-4  space-y-4"
                 itemScope
                 itemType="https://schema.org/Physician"
               >
@@ -220,7 +220,7 @@ const BestDoctors = () => {
                     </div>
                   )}
                   <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent rounded-lg" />
-                  <div className="absolute top-4 right-4 flex items-center gap-1 bg-white/90 dark:bg-gray-900/90 px-2 py-1 rounded-full text-xs font-medium">
+                  <div className="absolute top-4 right-4 flex items-center gap-1 bg-white/90 dark:bg-default-900/90 px-2 py-1 rounded-full text-xs font-medium">
                     <Star className="w-3 h-3 text-yellow-500 fill-yellow-500" />
                     <span
                       itemProp="aggregateRating"
@@ -238,7 +238,7 @@ const BestDoctors = () => {
                     <div className="flex justify-between items-center">
                       <Link
                         href={`/doctors/${doctor.id}`}
-                        className="text-xl font-bold text-gray-800 dark:text-white mb-1"
+                        className="text-xl font-bold text-default-800 dark:text-white mb-1"
                         itemProp="url"
                       >
                         <h3 itemProp="name">{doctor.name}</h3>
@@ -253,7 +253,7 @@ const BestDoctors = () => {
                       </Button>
                     </div>
                     <p
-                      className="text-sm text-gray-600 dark:text-gray-300"
+                      className="text-sm text-default-600 dark:text-default-300"
                       itemProp="hasCredential"
                     >
                       {doctor.qualification}
@@ -293,7 +293,7 @@ const BestDoctors = () => {
                   </div>
 
                   {/* Action buttons */}
-                  <div className="mt-auto pt-4 border-t border-gray-100 dark:border-gray-700">
+                  <div className="mt-auto pt-4 border-t border-default-100 dark:border-default-700">
                     <div className="pt-2 flex gap-2 sm:gap-8 justify-between items-center">
                       <Button
                         variant="outline"

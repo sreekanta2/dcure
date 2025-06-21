@@ -10,12 +10,10 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
-import { getAppointments } from "@/config/appointments/appointments.config";
 import { Check, Trash } from "lucide-react";
 import Link from "next/link";
 
-const Appointments = async () => {
-  const appointmentResponse = await getAppointments({ page: 1, limit: 5 });
+const Appointments = async ({ appointments }: { appointments: any }) => {
   return (
     <div className=" w-full">
       <div className="border p-4 pb-0 bg-card rounded-md space-y-2">
@@ -41,8 +39,8 @@ const Appointments = async () => {
                   </TableRow>
                 </TableHeader>
                 <TableBody>
-                  {appointmentResponse?.data?.length > 0 &&
-                    appointmentResponse?.data.map((item: any) => (
+                  {appointments?.data?.length > 0 &&
+                    appointments?.data.map((item: any) => (
                       <TableRow key={item.id} className="hover:bg-muted">
                         <TableCell className="font-medium text-card-foreground/80">
                           <div className="flex gap-3 items-center">

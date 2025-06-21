@@ -17,17 +17,11 @@ interface ButtonProps {
     | "dark";
 }
 
-const SubmitButton = ({
-  isLoading,
-  className,
-  children,
-  variant,
-  color,
-}: ButtonProps) => {
+const SubmitButton = ({ isLoading, className, children }: ButtonProps) => {
   return (
     <Button
       type="submit"
-      variant="soft"
+      variant="outline"
       color="info"
       disabled={isLoading}
       className={className}

@@ -19,6 +19,7 @@
 // config/site.ts
 export const siteConfig = {
   sidebarBg: "none",
+  siteName: "Medexa",
   name: "Doccare - Find & Book Doctors Online",
   url: `${process.env.NEXT_PUBLIC_API_URL || "https://doccare.srikanto.site"}`,
   description:

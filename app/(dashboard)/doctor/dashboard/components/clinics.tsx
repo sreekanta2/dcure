@@ -2,9 +2,8 @@
 import CustomImage from "@/components/ImageComponent";
 import { Icon } from "@iconify/react";
 import { ActivityIcon } from "lucide-react";
-import { clinics } from "./data";
 
-const Clinics = () => {
+const Clinics = ({ clinics }: { clinics: any }) => {
   return (
     <div className=" w-full">
       <div className="border p-4 bg-card rounded-md space-y-2">
@@ -14,7 +13,7 @@ const Clinics = () => {
         <hr className="" />
 
         <div className="md:max-h-[620px] space-y-4">
-          {clinics.map((item, index) => (
+          {clinics?.map((item: any, index: number) => (
             <div
               key={`socials-${index}`}
               className="bg-background/50 rounded-md p-2 border"
